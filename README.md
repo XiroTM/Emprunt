@@ -6,6 +6,7 @@ Application web PHP/MySQL développée dans le cadre d'un stage BTS SIO SLAM —
 Présentation :
 Ce projet a été développé lors d'un stage en entreprise dans le cadre du BTS SIO option SLAM. L'objectif était de résoudre un problème concret : le magasinier d'une entreprise gérait les prêts d'outils manuellement sur papier, ce qui causait des pertes, des oublis et une perte de temps importante.
 Solution apportée : une application web accessible depuis n'importe quel smartphone via un QR code collé sur chaque outil. Le technicien scanne le QR code, remplit un formulaire en quelques secondes, et le magasinier suit tout depuis son tableau de bord.
+
 Application en ligne : pret.free.nf
 
  
@@ -30,27 +31,11 @@ Côté magasinier (admin)
 
 
 Technologies utilisées : 
-TechnologieUsagePHP 8+Backend, logique métierMySQLBase de donnéesPDOConnexion sécurisée à la BDDphpqrcodeGénération des QR codesFPDFGénération des PDFHTML/CSSInterface utilisateur responsive
+PHP / SQL
+HTML / CSS / JavaScript
+Librairie :
+phpqrcode / fpdf
 
-Structure de la base de données :
-sqloutils (id, nom, photo)
-emprunts (id, outil_id, nom_emprunteur, date_emprunt, date_retour_prevue, date_retour_reelle)
-Relation : un outil peut avoir plusieurs emprunts. Un emprunt est lié à un seul outil.
-
-Structure du projet :
-gestion-prets/
-├── index.php           # Page emprunt utilisateur (accès via QR code)
-├── login.php           # Connexion magasinier
-├── admin.php           # Tableau de bord magasinier
-├── traitement.php      # Traitement formulaire d'emprunt
-├── qrcode.php          # Génération et affichage QR code
-├── export.php          # Export CSV et PDF
-├── db.example.php      # Exemple de configuration BDD
-├── style.css           # Feuille de styles
-├── db.sql              # Structure SQL de la base de données
-└── libs/
-    ├── phpqrcode.php   # Librairie génération QR code
-    └── fpdf.php        # Librairie génération PDF
 
 Installation :
 Prérequis
@@ -95,7 +80,16 @@ Interface admin : https://votre-domaine.com/login.php
 
 
 Sécurité :
-MesureDétailHashage bcryptMots de passe hashés avec password_hash() PASSWORD_DEFAULTRequêtes préparées PDOProtection contre les injections SQLhtmlspecialchars()Protection contre les attaques XSSSessions PHPAuthentification magasinier sécuriséeValidation serveurToutes les entrées vérifiées côté serveurVérification méthode POSTAccès direct aux pages de traitement bloqué
+Hashage bcrypt, Mots de passe hashés avec password_hash() PASSWORD_DEFAULT
+Requêtes préparées 
+PDO, Protection contre les injections SQL htmlspecialchars()
+Protection contre les attaques XSS
+Sessions PHP
+Authentification magasinier sécurisée
+Validation serveur
+Toutes les entrées vérifiées côté serveur
+Vérification méthode POST
+Accès direct aux pages de traitement bloqué
 
 Fonctionnement :
 1. Admin ajoute un outil → génère QR code → imprime l'étiquette → colle sur l'outil
@@ -106,8 +100,6 @@ Fonctionnement :
 6. Admin valide le retour depuis son dashboard
 7. Admin exporte l'historique en PDF ou CSV
 
-Aperçu :
-Page emprunt (mobile)Dashboard adminFormulaire responsive optimisé pour smartphoneVue complète des emprunts en cours et historique
 
 Auteur :
 Grégory KSAS
