@@ -1,0 +1,175 @@
+/* style général de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+    color: #222;
+}
+
+/* boite blanche centrale qui contient tout */
+.container {
+    background-color: #fff;
+    max-width: 900px;
+    margin: 0 auto; /* centré */
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* titre principal */
+h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* sous titres */
+h2 {
+    font-size: 17px;
+    margin: 25px 0 10px 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* étiquette au dessus d'un champ */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* champs de formulaire */
+input[type="text"],
+input[type="date"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* tous les boutons */
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* effet survol bouton */
+button:hover {
+    background-color: #555;
+}
+
+/* tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* en-tête tableau */
+thead th {
+    background-color: #333;
+    color: #fff;
+    padding: 8px 10px;
+    text-align: left;
+}
+
+/* cellules tableau */
+td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* une ligne sur deux grisée */
+tbody tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+/* message outil indisponible */
+.indisponible {
+    background-color: #fff3cd;
+    border-left: 4px solid #e6a817;
+    padding: 12px;
+    border-radius: 4px;
+    color: #7a5000;
+}
+
+/* message erreur mot de passe */
+.erreur {
+    background-color: #ffe0e0;
+    border-left: 4px solid #cc0000;
+    padding: 10px;
+    border-radius: 4px;
+    color: #cc0000;
+    margin-bottom: 12px;
+}
+
+/* header admin avec titre et bouton déconnexion côte à côte */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* bouton déconnexion rouge */
+.btn-deconnexion {
+    background-color: #cc0000;
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.btn-deconnexion:hover {
+    background-color: #aa0000;
+}
+
+/* formulaire ajout outil en ligne */
+.form-ajout {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+/* dans le formulaire ajout les inputs reprennent taille auto */
+.form-ajout input[type="text"],
+.form-ajout input[type="file"] {
+    width: auto;
+    margin-bottom: 0;
+    flex: 1;
+}
+
+/* liens export CSV et PDF */
+a[href*="export.php"] {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-size: 13px;
+}
+
+a[href*="export.php"]:hover {
+    background-color: #555;
+}
+
+/* photo outil sur index.php */
+img {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 4px;
+}
